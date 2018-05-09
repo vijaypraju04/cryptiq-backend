@@ -14,4 +14,8 @@ class Api::V1::SessionsController < ApplicationController
       token = issue_token(payload)
       render json: { id: user.id, username: user.username, jwt: token }
     end
+    else
+      render json: { error: "Login Failed"}
+    end
+
   end
