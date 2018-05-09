@@ -17,5 +17,6 @@ class Api::V1::SessionsController < ApplicationController
     else
       render json: { error: "Login Failed"}
     end
-
   end
+
+end
