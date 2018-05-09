@@ -6,4 +6,7 @@ class Api::V1::SessionsController < ApplicationController
     username: current_user.username
     } end
   end
+
+  def create
+  end
 end
