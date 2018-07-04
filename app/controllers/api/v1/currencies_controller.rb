@@ -3,4 +3,10 @@ class Api::V1::CurrenciesController < ApplicationController
     @currencies = Currency.all
     render json: @currencies
   end
+
+  def show
+    @currency = Currency.find(params[:id])
+    render json: @currency
+  end
+
 end
