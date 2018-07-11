@@ -18,4 +18,10 @@ class Portfolio < ApplicationRecord
 end
 
   def transactions
+    self.portfolio_coins.sort{|a,b| b <=> a}.map do |transaction|
+  {
+    trans_id: transaction.id,
+    trans_amt: transaction.trans_amt,
+  }
+    end
   end
