@@ -16,3 +16,6 @@ class Portfolio < ApplicationRecord
     end
   end
 end
+
+  def transactions
+  end
