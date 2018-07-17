@@ -11,6 +11,7 @@ class Portfolio < ApplicationRecord
     params.map do |coinInfo|
       coin = Coin.find_or_create_by(name: coinInfo[:coinName], symbol: coinInfo[:coinSymbol])
       amount = budget / coin_count
+      feeAmount = amount - .05
       quantity = trans_amt / coinInfo[:coinPrice]
       PortfolioCoin.create(trans_amt: trans_amt, trans_price: coinInfo[:coinPrice], trans_type: 'buy', quantity: quantity, paper_currency: 'USD', portfolio_id: self.id, coin_id: coin.id)
     end
