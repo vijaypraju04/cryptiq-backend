@@ -21,6 +21,7 @@ end
   def transactions
     self.portfolio_coins.sort{|a,b| b <=> a}.map do |transaction|
   {
+    trans_fee: transaction.fee,
     trans_id: transaction.id,
     trans_amt: transaction.trans_amt,
   }
